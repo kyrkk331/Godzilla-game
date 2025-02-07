@@ -322,6 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75aa19b27a2cdad47901c27750e015d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tankLaser: {fileID: 0}
   health: 100
 --- !u!1001 &2407446893869455031
 PrefabInstance:

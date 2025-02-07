@@ -2,16 +2,18 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEngine.UIElements;
 
 public class GodzillaMovement : MonoBehaviour
 {
-   
+
     public float godzilla_xSpeed;
     public float godzilla_xSprint;
     public float godzilla_ySpeed;
     public float godzilla_ySprint;
-
+   
     private Animator animator;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -39,8 +41,8 @@ public class GodzillaMovement : MonoBehaviour
             xSpeed = godzilla_xSpeed;
             ySpeed = godzilla_ySpeed;
         }
-
-        Vector2 velocity = new Vector2(direction.x*xSpeed, direction.y*ySpeed);
+       
+        Vector2 velocity = new Vector2(direction.x * xSpeed, direction.y * ySpeed);
 
         rb.linearVelocity = velocity;
 
@@ -59,7 +61,7 @@ public class GodzillaMovement : MonoBehaviour
 
         // Play isWalking animation when walking (or running) 
         // bool parameter
-        if(xInput != 0||yInput !=0)
+        if (xInput != 0 || yInput != 0)
         {
             animator.SetBool("isWalking", true);
         }
@@ -75,13 +77,13 @@ public class GodzillaMovement : MonoBehaviour
             Vector3 localScale = transform.localScale;
             localScale.x = Mathf.Abs(localScale.x) * Mathf.Sign(xInput);
             transform.localScale = localScale;
-           
+
 
             foreach (Transform child in transform)
             {
                 child.transform.localScale = localScale;
             }
         }
+        
     }
-    
 }

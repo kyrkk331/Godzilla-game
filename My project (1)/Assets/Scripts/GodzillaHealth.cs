@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class GodzillaHealth : MonoBehaviour
 {
@@ -28,12 +29,12 @@ public class GodzillaHealth : MonoBehaviour
             if (health <= 0)
             {
                 health = 0;
-                Debug.Log("Godzilla is dead!");
+                SceneManager.LoadScene("GameOver");
             }
         }
         // die if collision with other
         
-        if (other.gameObject.CompareTag("enemy"))
+        if (other.gameObject.CompareTag("helicopter"))
         {
             health = 0;
             Debug.Log("Godzilla hit by tank or helicopter! Health: " + health);

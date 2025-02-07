@@ -18,6 +18,7 @@ public class HelicopterDestraction : MonoBehaviour
         {
             //Debug.Log("1");
             Destroy(gameObject);
+            //na mpei animation
         }
     }
 
